@@ -11,18 +11,18 @@ public class DynamicSprite extends SolidSprite {
     private int timeBetweenFrame = 200;
     private Direction direction;
     private boolean isMoving = false; 
-    private long lastFrameTime; // Temps de la dernière mise à jour de l'animation
-    private int currentFrameIndex = 0; // Index de l'image actuelle
+    private long lastFrameTime; 
+    private int currentFrameIndex = 0; 
 
     public DynamicSprite(int x, int y, Image image, int width, int height) {
         super(x, y, image, width, height);
-        this.direction = Direction.SOUTH;  // Par défaut, regarde vers le bas (Sud)
+        this.direction = Direction.SOUTH;  
         this.lastFrameTime = System.currentTimeMillis();
     }
 
     public void setDirection(Direction direction) {
         this.direction = direction;
-        this.isMoving = true; // Indique que le héros est en mouvement
+        this.isMoving = true; 
     }
 
     public void setSpeed(double speed) {
@@ -31,8 +31,8 @@ public class DynamicSprite extends SolidSprite {
    
 
     public void stopMoving() {
-        this.isMoving = false; // Arrête le mouvement
-        this.currentFrameIndex = 0; // Réinitialise l'animation
+        this.isMoving = false; 
+        this.currentFrameIndex = 0; 
     }
 
     public void moveIfPossible(ArrayList<Sprite> environment) {
@@ -91,8 +91,8 @@ public class DynamicSprite extends SolidSprite {
 
     @Override
     public void draw(Graphics g) {
-        int frameY = direction.getFrameLineNumber() * height; // Ligne de l'image selon la direction
-        int frameX = currentFrameIndex * width; // Colonne de l'image selon l'index actuel
+        int frameY = direction.getFrameLineNumber() * height; 
+        int frameX = currentFrameIndex * width; 
 
         g.drawImage(image, (int) x, (int) y, (int) (x + width), (int) (y + height),
                 frameX, frameY, frameX + width, frameY + height, null);

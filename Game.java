@@ -14,7 +14,7 @@ public class Game extends JPanel implements ActionListener {
     private Timer timer;
     private JFrame frame;
     private TitleScreen titleScreen;
-    private int timeLimit = 60; 
+    private int timeLimit = 10; 
     private int elapsedTime = 0;
     private int frameCount = 0; 
     private long lastFpsTime = System.currentTimeMillis(); 
@@ -32,7 +32,7 @@ public class Game extends JPanel implements ActionListener {
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 600);
-        frame.add(titleScreen); // Ajouter l'écran d'accueil
+        frame.add(titleScreen); 
         frame.setVisible(true); 
         trapManager = new TrapManager();
         trapManager.addTrap(300, 300, new ImageIcon("src/projetJavaEnsea/img/trap.png").getImage(), 46, 46);
@@ -66,7 +66,7 @@ public class Game extends JPanel implements ActionListener {
     }
 
     private void createEnemies() {
-        enemies.add(new Enemy(100, 300, new ImageIcon("src/projetJavaEnsea/img/enemy.png").getImage(), 46, 46, playground.getSolidSpriteList()));
+        enemies.add(new Enemy(100, 300, new ImageIcon("src/projetJavaEnsea/img/rock.png").getImage(), 41, 41, playground.getSolidSpriteList()));
     }
 
     @Override

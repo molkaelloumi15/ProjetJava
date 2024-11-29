@@ -30,7 +30,7 @@ public class PhysicEngine implements Engine {
     @Override
     public void update() {
         for (DynamicSprite dynamicSprite : movingSpriteList) {
-            dynamicSprite.moveIfPossible(environment); // Déplacement conditionnel
+            dynamicSprite.moveIfPossible(environment); 
         }
     }
 
